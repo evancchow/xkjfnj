@@ -11,7 +11,6 @@ with open("constitution_links.csv", 'rb') as f:
 final_data = []
 for cx, curr_url in enumerate(all_links):
     print "Url #{}".format(cx)
-
     page = urllib2.urlopen(curr_url.replace('\"',''))
     soup = BeautifulSoup(page.read())
 
@@ -61,8 +60,6 @@ for cx, curr_url in enumerate(all_links):
     entry = '%s\t%s\t%s' % (country, date, preamble)
     print entry[0:120]
     final_data.append(entry)
-
-    print
 
 print "Successfully extracted preambles!"
 
